@@ -1,6 +1,6 @@
 # DevNov
 
-#Version control :
+# Version control :
   - Each collaborator should fork the repo
   - Clone the repo to their local machine
   - Create a new branch for a new feature
