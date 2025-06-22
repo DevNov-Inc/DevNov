@@ -9,6 +9,7 @@ import RHelloWorld from './pages/R_Hello_World/R_Hello_World'
 import JSHelloWorld from './pages/JS_Hello_World/JS_Hello_World'
 import PHPHelloWorld from './pages/PHP_Hello_World/PHP_Hello_World'
 import JavaInput from './pages/Java_Input/Java_Input'
+import CHelloWorld from './pages/C_Hello_World/C_Hello_World'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='JavaHelloWorld' element={<JavaHelloWorld/>}></Route>
         <Route path='CPlusPlusHelloWorld' element={<CPlusPlusHelloWorld/>}></Route>
         <Route path='CSharpHelloWorld' element={<CSharpHelloWorld/>}></Route>
+        <Route path='CHelloWorld' element={<CHelloWorld/>}></Route>
         <Route path='PythonHelloWorld' element={<PythonHelloWorld/>}></Route>
         <Route path='RHelloWorld' element={<RHelloWorld/>}></Route>
         <Route path='JSHelloWorld' element={<JSHelloWorld/>}></Route>

@@ -2,7 +2,7 @@ import Header from "../../components/Header/Header"
 import { KEYS, PROJECTS, PROJECT_INDEX } from "../../components/Projects/Projects";
 import ContentArea from "../../components/ContentArea/ContentArea";
 import { COLOURS } from "../../components/Constants/Constants";
-import { useState } from "react";
+import { SetStateAction,useState } from "react";
 import Input from "../../components/Input/Input";
 import { getClearAllFieldsStatus, getDevStatus } from "../../components/DisplayArea/DisplayArea";
 
@@ -44,10 +44,10 @@ function JavaHelloWorld() {
           <section style={{color: COLOURS.THEME_BLUE_1}} className="codeSegment">public class</section>
           <section className="codeSegment">
                       <Input
-                        onFocus = {e=>onFocus(0,EMPTY_FIELDS.CLASS_NAME)}
+                        onFocus = {()=>onFocus(0,EMPTY_FIELDS.CLASS_NAME)}
                         style={{marginLeft: "-20px",width: "200px",color: COLOURS.THEME_BLUE_2}}
                         value={className} 
-                        onChange={e => setClassName(e.target.value)}
+                        onChange={(e: { target: { value: SetStateAction<string>; }; }) => setClassName(e.target.value)}
                         title = {"Enter the class name"}
                       />
           </section>
@@ -72,10 +72,10 @@ function JavaHelloWorld() {
           <section className="codeSegment"></section>
           <section className="codeSegment">
                       <Input
-                          onFocus = {e=>onFocus(1,EMPTY_FIELDS.OUTPUT_STREAM)}
+                          onFocus = {()=>onFocus(1,EMPTY_FIELDS.OUTPUT_STREAM)}
                           style={{width: "300px"}} 
                           value={outputStream} 
-                          onChange={e => setOutputStream(e.target.value)}
+                          onChange={(e: { target: { value: SetStateAction<string>; }; }) => setOutputStream(e.target.value)}
                           title = {"Output text to the output stream"}
                       />
           </section>

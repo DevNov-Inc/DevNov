@@ -2,7 +2,7 @@ import Header from "../../components/Header/Header"
 import { KEYS, PROJECTS, PROJECT_INDEX } from "../../components/Projects/Projects";
 import ContentArea from "../../components/ContentArea/ContentArea";
 import { COLOURS } from "../../components/Constants/Constants";
-import { useState } from "react";
+import { SetStateAction,useState } from "react";
 import Input from "../../components/Input/Input";
 import { getClearAllFieldsStatus, getDevStatus } from "../../components/DisplayArea/DisplayArea";
 
@@ -37,10 +37,10 @@ function RHelloWorld() {
       <section className="codeLine">
           <section className="codeSegment">
                       <Input
-                        onFocus = {e=>onFocus(0,EMPTY_FIELDS.OUTPUT_STREAM)}
+                        onFocus = {()=>onFocus(0,EMPTY_FIELDS.OUTPUT_STREAM)}
                         style={{width: "400px"}}
                         value={outputStream} 
-                        onChange={e => setOutputStream(e.target.value)}
+                        onChange={(e: { target: { value: SetStateAction<string>; }; }) => setOutputStream(e.target.value)}
                         title = {"Print text using the output stream without quoatation marks"}
                       />
           </section>
