@@ -1,0 +1,73 @@
+.contentWrapper{
+    top: 40px;
+    left: 0;
+    height: calc(100% - 40px);
+    position: fixed;
+    width: 70%;
+    float: left;
+    padding: 1%;
+}
+
+.contentWrapper h1,
+.difficulty{
+    font-size: 15px;
+    font-weight: 600;
+    width: 100%;
+    float: left;
+    margin-top: 1%;
+}
+
+.difficulty{
+    margin-bottom: 1%;
+}
+
+
+
+.contentHeader,
+.contentLeft,
+.contentRight{
+    width: 100%;
+    float: left;
+}
+
+.contentHeader{
+    padding-left: 2%;
+}
+
+
+
+.contentRight{
+    width: 30%;
+    margin-top: 47px;
+    float: left;
+    padding: 1%;
+    right: 0;
+    position: absolute;
+}
+
+.contentRight h2{
+    float: left;
+    font-weight: 600;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 700px){
+
+    .contentWrapper,
+    .contentRight{
+        width: 100%;
+        position: static;
+    }
+
+    .contentWrapper{
+        margin-top: 40px;
+        height: auto;
+    }
+
+    .contentRight{
+        margin-top: 0;
+    }
+
+
+}

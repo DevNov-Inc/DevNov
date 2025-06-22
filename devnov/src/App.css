@@ -1,1 +1,17 @@
 @import "tailwindcss";
+:root{
+    --themeWhite: rgb(255, 255, 255);
+    --themeRed: rgba(248, 7, 7, 0.897);
+    --themeGreen: rgb(40, 101, 14);
+    --themeLightGreen: rgb(0, 176, 80);
+    --themeOrange: rgba(241, 91, 10, 0.955);
+    --themeGray: rgb(106, 106, 106);
+    --themeLightGray: rgb(226, 226, 226);
+    --themeLightGray1: rgb(250, 245, 245);
+    --themeBlue: rgb(158, 203, 255);
+    --themeBlue_1: rgb(20, 241, 241);
+    --themeBlue_2: rgb(5, 22, 148);
+    --themeBlack: rgb(45, 45, 45);
+    --themeBrown: rgb(186, 97, 14);
+
+}
