@@ -1,0 +1,109 @@
+.tabsWrapper{
+    width: 100%;
+    padding: 1%;
+    float: left;
+}
+
+.displaArea{
+    width: 98%;
+    margin: 1%;
+    padding: 1%;
+    background-color: var(--themeBlack);
+    height: 65vh;
+    min-width: 300px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    border-radius: 10px;
+    color: var(--themeWhite);
+}
+
+.outputSection,
+.output{
+    width: 98%;
+    float: left;
+    margin: 1%;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.output{
+    background-color: var(--themeBlack);
+}
+
+.outputSection h2{
+    font-weight: 600;
+    font-size: 14px;
+    margin: 15px;
+}
+
+.devnov_icon{
+    width: 18px;
+    height: 15px;
+    margin-top: 12px;
+}
+
+
+.codeLine{
+    width: 100%;
+    float: left;
+    padding: 2px;
+}
+
+.codeSegment{
+    float: left;
+    margin: 5px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+
+.codeSpace input{
+   border: none;
+   background-color: var(--themeWhite);
+   color: var(--themeBlack);
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: 13px;
+   font-weight: 600;
+ }
+
+ .codeSpace input:focus{
+    outline: none;
+  }
+
+.codeSpace{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 2%;
+    font-size: 13px;
+    float: left;
+    min-width: 500px;
+}
+
+
+.codeSpace input{
+   border: none;
+   background-color: var(--themeWhite);
+   color: var(--themeBlack);
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: 13px;
+   font-weight: 600;
+   padding-left: 5px;
+ }
+
+  .codeOutput{
+    width: 98%;
+    float: left;
+    margin: 1%;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  @media screen and (max-width: 700px){
+
+    .displaArea{
+         height: auto;
+    }
+
+
+}
+
+

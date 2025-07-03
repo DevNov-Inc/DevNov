@@ -1,0 +1,19 @@
+.projects{
+    margin: 2%;
+    margin-top: 0;
+    margin-left: 0;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    padding-left: 10px;
+    width: 96%;
+    float: left;
+    cursor: pointer;
+    border-bottom: 1px solid var(--themeLightGray);
+}
+
+.projects h3{
+    width: 100%;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 13px;
+}
