@@ -1,6 +1,9 @@
-
-import { Route, Routes } from 'react-router-dom'
-import './App.css'
+import React, {useEffect, useState}from 'react'
+import { Route, Routes, Navigate, useNavigate } from 'react-router-dom'
+import '../src/App.css'
+import Login from './components/login/login'
+import { auth } from './firebase'
+import { onAuthStateChanged, User } from 'firebase/auth'
 import JavaHelloWorld from './pages/Java_Hello_World/Java_Hello_World'
 import CPlusPlusHelloWorld from './pages/C_Plus_Plus_Hello_World/C_Plus_Plus_Hello_World'
 import CSharpHelloWorld from './pages/C_Sharp_Hello_World/C_Sharp_Hello_World'
@@ -12,9 +15,84 @@ import JavaInput from './pages/Java_Input/Java_Input'
 import CHelloWorld from './pages/C_Hello_World/C_Hello_World'
 
 function App() {
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
+  // wait for the auth state changes
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user);
+      setLoading(false);
+
+      if (user) {
+        // Redirect after login (if currently on login page)
+        if (window.location.pathname === '../login') {
+          navigate('/');
+        }
+      }
+    });
+
+    return () => unsubscribe();
+  }, [navigate]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
+    <Routes>
+      {/* Login route */}
+      <Route
+        path="/login"
+        element={currentUser ? <Navigate to="/" /> : <Login />}
+      />
+
+      {/* Protected routes */}
+      <Route
+        path="/"
+        element={currentUser ? <JavaHelloWorld /> : <Navigate to="/login" />}
+      />
+      <Route
+        path="JavaHelloWorld"
+        element={currentUser ? <JavaHelloWorld /> : <Navigate to="/login" />}
+      />
+      <Route
+        path="CPlusPlusHelloWorld"
+        element={currentUser ? <CPlusPlusHelloWorld /> : <Navigate to="/login" />}
+      />
+      <Route
+        path="CSharpHelloWorld"
+        element={currentUser ? <CSharpHelloWorld /> : <Navigate to="/login" />}
+      />
+      <Route
+        path="CHelloWorld"
+        element={currentUser ? <CHelloWorld /> : <Navigate to="/login" />}
+      />
+      <Route
+        path="PythonHelloWorld"
+        element={currentUser ? <PythonHelloWorld /> : <Navigate to="/login" />}
+      />
+      <Route
+        path="RHelloWorld"
+        element={currentUser ? <RHelloWorld /> : <Navigate to="/login" />}
+      />
+      <Route
+        path="JSHelloWorld"
+        element={currentUser ? <JSHelloWorld /> : <Navigate to="/login" />}
+      />
+      <Route
+        path="PHPHelloWorld"
+        element={currentUser ? <PHPHelloWorld /> : <Navigate to="/login" />}
+      />
+      <Route
+        path="JavaInput"
+        element={currentUser ? <JavaInput /> : <Navigate to="/login" />}
+      />
+    </Routes>
+  );
+
+  /*return (
     <Routes>
         <Route path='/' element={<JavaHelloWorld/>}></Route>
         <Route path='JavaHelloWorld' element={<JavaHelloWorld/>}></Route>
@@ -28,7 +106,7 @@ function App() {
         <Route path='JavaInput' element={<JavaInput/>}></Route>
     </Routes>
      
-  )
+  )*/
 }
 
 export default App
