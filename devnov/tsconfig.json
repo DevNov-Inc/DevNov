@@ -9,6 +9,11 @@
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "allowUnusedLabels": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
     "types": ["react", "react-dom"]
   },
   
