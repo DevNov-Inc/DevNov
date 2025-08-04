@@ -1,8 +1,10 @@
-import React, {useEffect, useState}from 'react'
+import React, {useEffect, useState} from 'react'
 import { Route, Routes, Navigate, useNavigate } from 'react-router-dom'
 import '../src/App.css'
 import Login from './components/login/login'
-import { auth } from './firebase'
+//import { initializeApp } from 'firebase/app';
+//import { getAuth, onAuthStateChanged, User } from 'firebase/auth';
+import { auth } from './firebase';
 import { onAuthStateChanged, User } from 'firebase/auth'
 import JavaHelloWorld from './pages/Java_Hello_World/Java_Hello_World'
 import CPlusPlusHelloWorld from './pages/C_Plus_Plus_Hello_World/C_Plus_Plus_Hello_World'
@@ -21,7 +23,7 @@ function App() {
 
   // wait for the auth state changes
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user : User | null) => {
       setCurrentUser(user);
       setLoading(false);
 

@@ -7,6 +7,9 @@
 
   "compilerOptions": {
     "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "allowUnusedLabels": true,
     "types": ["react", "react-dom"]
-  }
+  },
+  
 }
