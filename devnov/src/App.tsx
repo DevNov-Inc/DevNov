@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import { Route, Routes, Navigate, useNavigate } from 'react-router-dom'
 import '../src/App.css'
 import Login from './components/login/login'
