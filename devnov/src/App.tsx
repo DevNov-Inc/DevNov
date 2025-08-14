@@ -1,6 +1,7 @@
 
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import Auth from './components/Auth/Auth'
 import JavaHelloWorld from './pages/Java_Hello_World/Java_Hello_World'
 import CPlusPlusHelloWorld from './pages/C_Plus_Plus_Hello_World/C_Plus_Plus_Hello_World'
 import CSharpHelloWorld from './pages/C_Sharp_Hello_World/C_Sharp_Hello_World'
@@ -16,7 +17,8 @@ function App() {
 
   return (
     <Routes>
-        <Route path='/' element={<JavaHelloWorld/>}></Route>
+        <Route path='/home' element={<JavaHelloWorld/>}></Route>
+        <Route path = "/" element={<Auth/>} />
         <Route path='JavaHelloWorld' element={<JavaHelloWorld/>}></Route>
         <Route path='CPlusPlusHelloWorld' element={<CPlusPlusHelloWorld/>}></Route>
         <Route path='CSharpHelloWorld' element={<CSharpHelloWorld/>}></Route>
