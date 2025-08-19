@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const API_URL = "https://devback-ewem.onrender.com/api/users";
+const API_URL = import.meta.env.VITE_USERS+"/users";
 
 // User Type
 export type User = {
